@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
-import Slider from 'react-slick';
 
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 
-import { Container, Logo, Search, Wrapper, Map, Carousel } from './styles';
+import { Container, Carousel, Logo, Search, Wrapper, Map, CarouselTitle } from './styles';
+import { Card } from '../../components';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const settings = {
+    arrows: false,
     dots: false,
     infinite: true,
     speed: 300,
@@ -30,21 +31,16 @@ const Home = () => {
             trailingIcon={<MaterialIcon role="button" icon="search" />}>
             <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
           </TextField>
-          <Carousel>Em sua área</Carousel>
-          <Slider {...settings}>
-            <div>
-              <img src={restaurante} alt="Imagem Restaurante" />
-            </div>
-            <div>
-              <img src={restaurante} alt="Imagem Restaurante" />
-            </div>
-            <div>
-              <img src={restaurante} alt="Imagem Restaurante" />
-            </div>
-            <div>
-              <img src={restaurante} alt="Imagem Restaurante" />
-            </div>
-          </Slider>
+          <CarouselTitle>Em sua área</CarouselTitle>
+          <Carousel {...settings}>
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+            <Card photo={restaurante} title="nome" />
+          </Carousel>
         </Search>
       </Container>
       <Map />
