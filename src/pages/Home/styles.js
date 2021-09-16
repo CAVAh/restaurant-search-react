@@ -28,11 +28,6 @@ export const Logo = styled.img({
   width: '50%',
 });
 
-export const Map = styled.div({
-  backgroundColor: 'red',
-  width: '500px',
-});
-
 export const Carousel = styled(Slider)`
   .slick-slide {
     margin-right: 20px;

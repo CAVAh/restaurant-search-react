@@ -5,11 +5,12 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 
-import { Container, Carousel, Logo, Search, Wrapper, Map, CarouselTitle } from './styles';
-import { Card } from '../../components';
+import { Container, Carousel, Logo, Search, Wrapper, CarouselTitle } from './styles';
+import { ImageCard, RestaurantCard, Modal, Map } from '../../components';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
   const settings = {
     arrows: false,
     dots: false,
@@ -33,17 +34,19 @@ const Home = () => {
           </TextField>
           <CarouselTitle>Em sua área</CarouselTitle>
           <Carousel {...settings}>
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
-            <Card photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
+            <ImageCard photo={restaurante} title="nome" />
           </Carousel>
         </Search>
+        <RestaurantCard />
       </Container>
       <Map />
+      <Modal open={modalOpen} onClose={() => setModalOpen(!modalOpen)} />
     </Wrapper>
   );
 };
