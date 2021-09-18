@@ -30,7 +30,7 @@ export const Logo = styled.img({
 
 export const Carousel = styled(Slider)`
   .slick-slide {
-    margin-right: 20px;
+    margin-right: 26px;
   }
 `;
 
@@ -42,3 +42,19 @@ export const CarouselTitle = styled.h2({
   lineHeight: '30px',
   margin: '16px 0',
 });
+
+export const ModalTitle = styled.p`
+  margin-bottom: 10px;
+  letter-spacing: 0.11px;
+  font-family: ${(props) => props.theme.fonts.regular};
+  color: ${(props) => props.theme.colors.text};
+  line-height: 29px;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+export const ModalInfo = styled(ModalTitle)`
+  font-weight: normal;
+  line-height: 19px;
+  font-size: 16px;
+`;

@@ -32,12 +32,13 @@ export const Title = styled.span`
 export const Address = styled.span`
   font-family: ${(props) => props.theme.fonts.regular};
   color: ${(props) => props.theme.colors.text};
-  font-size: 16px;
+  font-size: 15px;
   line-height: 19px;
-  margin: 10px 0;
+  margin: 10px 10px 10px 0;
 `;
 
 export const Image = styled.img`
+  display: ${(props) => (props.imageLoaded ? 'block' : 'none')};
   width: 100px;
   height: 100px;
   object-fit: cover;
